@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import shortid from 'shortid';
+import { customAlphabet } from 'nanoid';
+
 // const contactSlice = createSlice({
 //   name: 'contacts',
 //   initialState: {
@@ -15,6 +17,7 @@ import shortid from 'shortid';
 //     deleteContact(state, action) {},
 //   },
 // });
+const nanoid = customAlphabet('0123456789', 8);
 const initialState = [];
 const contactSlice = createSlice({
   name: 'contacts',
@@ -37,7 +40,9 @@ const contactSlice = createSlice({
         console.log(action);
         return [...state, action.payload.contact];
       },
-      prepare: contact => ({ payload: { contact }, id: shortid.generate() }),
+      prepare: contact => ({
+        payload: { ...contact, id: nanoid() },
+      }),
     },
     deleteContact: (state, action) =>
       state.filter(i => i.id !== action.payload),

@@ -32,11 +32,10 @@ export default function Form() {
 
   const handleSubmit = e => {
     e.preventDefault();
+
     contacts.map(contact => contact.name).includes(name)
       ? alert(`${name} is already in contacts.`)
       : dispatch(formSubmithandle({ name, number }));
-    // name.id = shortid.generate();
-
     reset();
   };
 
@@ -44,12 +43,14 @@ export default function Form() {
     setName('');
     setNumber('');
   };
-  const addContacts = data => {
-    console.log(data);
-    data.id = shortid.generate();
-
-    // dispatch(formSubmithandle());
-  };
+  // const addContacts = () => {
+  //   dispatch(formSubmithandle({ name, number }));
+  // };
+  // const addContacts = () => {
+  // console.log(data);
+  // data.id = shortid.generate();
+  // dispatch(formSubmithandle());
+  // };
   // setContacts(contacts => [...contacts, data]);
   // if (contacts.find(contact => contact.name === data.name)) {
   //   alert(`${data.name} is already on contacts`);
@@ -87,7 +88,7 @@ export default function Form() {
         onChange={handleChange}
         id={numberInputId}
       />
-      <Button label="Add contact" onSubmit={addContacts} />
+      <Button label="Add contact" onSubmit={formSubmithandle} />
     </form>
   );
 }
