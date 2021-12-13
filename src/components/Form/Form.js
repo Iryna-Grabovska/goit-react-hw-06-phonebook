@@ -44,34 +44,6 @@ export default function Form() {
     setNumber('');
   };
 
-  // const formSubmithandle = (){
-
-  // }
-  // const addContacts = () => {
-  //   contacts.map(contact => contact.name).includes(name)
-  //     ? alert(`${name} is already in contacts.`)
-  //     : dispatch(formSubmithandle({ name, number }));
-  //   // dispatch(formSubmithandle({ name, number }));
-  //   // dispatch(formSubmithandle);
-  // };
-  // const addContacts = () => {
-  // console.log(data);
-  // data.id = shortid.generate();
-  // dispatch(formSubmithandle());
-  // };
-  // setContacts(contacts => [...contacts, data]);
-  // if (contacts.find(contact => contact.name === data.name)) {
-  //   alert(`${data.name} is already on contacts`);
-  //   return;
-  // }
-  // if (data.name === '') {
-  //   alert(`please, write the name from the contacts`);
-  //   return;
-  // }
-  // if (data.number === '') {
-  //   alert(`please, write the name from the number`);
-  // }
-  // };
   return (
     <form onSubmit={handleSubmit}>
       <Input
