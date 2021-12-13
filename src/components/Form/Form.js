@@ -33,12 +33,12 @@ export default function Form() {
   const handleSubmit = e => {
     e.preventDefault();
 
-    contacts.map(contact => contact.name).includes(name)
+    contacts.some(contact => contact.name.includes(name))
       ? alert(`${name} is already in contacts.`)
       : dispatch(formSubmithandle({ name, number }));
     reset();
   };
-  console.log(name, number);
+
   const reset = () => {
     setName('');
     setNumber('');
