@@ -38,13 +38,21 @@ export default function Form() {
       : dispatch(formSubmithandle({ name, number }));
     reset();
   };
-
+  console.log(name, number);
   const reset = () => {
     setName('');
     setNumber('');
   };
+
+  // const formSubmithandle = (){
+
+  // }
   // const addContacts = () => {
-  //   dispatch(formSubmithandle({ name, number }));
+  //   contacts.map(contact => contact.name).includes(name)
+  //     ? alert(`${name} is already in contacts.`)
+  //     : dispatch(formSubmithandle({ name, number }));
+  //   // dispatch(formSubmithandle({ name, number }));
+  //   // dispatch(formSubmithandle);
   // };
   // const addContacts = () => {
   // console.log(data);

@@ -3,9 +3,9 @@ import { changeFilter } from 'store/filterSlice';
 
 import s from './Filter.module.css';
 
-import PropTypes from 'prop-types';
-
-export default function Filter({ value, onChange }) {
+export default function Filter() {
+  const value = useSelector(state => state.filterContact);
+  console.log(value);
   const dispatch = useDispatch();
   return (
     <label className={s.filterLabel}>
@@ -14,12 +14,8 @@ export default function Filter({ value, onChange }) {
         className={s.filterInput}
         type="text"
         value={value}
-        onChange={e => dispatch()}
+        onChange={e => dispatch(changeFilter(e.target.value))}
       />
     </label>
   );
 }
-Filter.propTypes = {
-  value: PropTypes.string,
-  onChange: PropTypes.func,
-};
